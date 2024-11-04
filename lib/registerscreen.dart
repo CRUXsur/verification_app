@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -48,18 +49,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Column(
                     children: [
                       Text(
-                        "JOIN US",
+                        "UNETE a Nosotros",
                         style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 8,
+                          fontSize: screenWidth / 16,
                         ),
                       ),
                       Text(
-                        "Create an account today!",
+                        "Verifica tu cuenta!",
                         style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontSize: screenWidth / 30,
+                          color: Colors.blueGrey,
+                          fontSize: screenWidth / 22,
                         ),
                       ),
                     ],
@@ -103,13 +104,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             if(usernameController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text("Username is still empty!"),
+                                  content: Text("Ingrese Usuario!"),
                                 ),
                               );
                             } else if(phoneController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text("Phone number is still empty!"),
+                                  content: Text("Ingrese No. Celular!"),
                                 ),
                               );
                             } else {
@@ -128,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             child: Center(
                               child: Text(
-                                "CONTINUE",
+                                "CONTINUAR",
                                 style: GoogleFonts.montserrat(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -156,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Username",
+          "Usuario",
           style: GoogleFonts.montserrat(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
@@ -176,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
         const SizedBox(height: 16,),
         Text(
-          "Phone number",
+          "Numero Celular",
           style: GoogleFonts.montserrat(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
@@ -184,8 +185,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
         IntlPhoneField(
           controller: phoneController,
-          showCountryFlag: false,
+          //showCountryFlag: false,
           showDropdownIcon: false,
+          initialCountryCode: 'BO',
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
@@ -208,7 +210,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "We just sent a code to ",
+                text: "Enviamos un codigo al No. ",
                 style: GoogleFonts.montserrat(
                   color: Colors.black87,
                   fontSize: 18,
@@ -223,7 +225,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               TextSpan(
-                text: "\nEnter the code here and we can continue!",
+                text: "\nIngresa el codigo aqui para continuar!",
                 style: GoogleFonts.montserrat(
                   color: Colors.black87,
                   fontSize: 12,
@@ -253,7 +255,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Didn't receive the code? ",
+                text: "No recibiste el codigo? ",
                 style: GoogleFonts.montserrat(
                   color: Colors.black87,
                   fontSize: 12,
@@ -267,7 +269,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     });
                   },
                   child: Text(
-                    "Resend",
+                    "ReEnviar",
                     style: GoogleFonts.montserrat(
                       color: Colors.black87,
                       fontSize: 12,
