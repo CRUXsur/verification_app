@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:verification_app/controller/phone_auth_controller.dart';
 
 class PhoneAuthScreen extends StatelessWidget {
+  // to use controller we need to create an instance of that controller
+  // here, before the build method
   PhoneAuthController controller = Get.put(PhoneAuthController());
 
 
@@ -14,6 +16,8 @@ class PhoneAuthScreen extends StatelessWidget {
           centerTitle: true,
           elevation: 0,
         ),
+        // we will wrap body widget with get builder to manage the state
+        // using controller
         body: GetBuilder<PhoneAuthController>(
           builder: (_) => Padding(
             padding: const EdgeInsets.all(16),
@@ -26,7 +30,7 @@ class PhoneAuthScreen extends StatelessWidget {
                     controller: controller.phoneController,
                     keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
-                        hintText: "03472222", labelText: "Phone Number"),
+                        hintText: "71721021", labelText: "Phone Number"),
 
                     // lets add validation
                     validator: (String? number) {

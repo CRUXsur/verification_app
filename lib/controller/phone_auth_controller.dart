@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:twilio_flutter/twilio_flutter.dart';
 
 class PhoneAuthController extends GetxController {
+  // we will make this class stateless and manage the state
+  // using the controller
   TextEditingController phoneController = TextEditingController();
   TextEditingController codeController = TextEditingController();
   final formKey = GlobalKey<FormState>();
